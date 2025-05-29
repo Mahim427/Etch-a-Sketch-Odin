@@ -18,5 +18,31 @@ function makeGrid(gridSize) {
     container.appendChild(fragment);
 }
 
+
+// Mouse/Coloring Events
+let isMouseDown = false;
+
+container.addEventListener('pointerdown', e => {
+    isMouseDown = true;
+
+    if (e.target.classList.contains('box')) {
+        e.target.style.backgroundColor = "#1e1e1e";
+    }
+    e.preventDefault();  // Prevent text selection
+})
+
+
+container.addEventListener('pointerover', e => {
+    if (isMouseDown && e.target.classList.contains('box')) {
+        e.target.style.backgroundColor = "#1e1e1e";
+    }
+})
+
+
+document.addEventListener('pointerup', () => {
+    isMouseDown = false;
+})
+
+
 // Run
 makeGrid(size);
