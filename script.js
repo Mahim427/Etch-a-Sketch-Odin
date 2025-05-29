@@ -19,6 +19,22 @@ function makeGrid(gridSize) {
 }
 
 
+newBtn.addEventListener('click', () => {
+    let newSize;
+    do {
+        newSize = +prompt("Number of square per side (1-100).");
+
+        if (newSize === 0)  // Checks for prompt cancellation
+            return;
+
+    } while (newSize < 1 || newSize > 100);
+
+    container.textContent = '';  // Clear the container
+    size = newSize;
+    makeGrid(size);
+})
+
+
 // Mouse/Coloring Events
 let isMouseDown = false;
 
