@@ -35,6 +35,13 @@ newBtn.addEventListener('click', () => {
 })
 
 
+eraseBtn.addEventListener('click', () => {
+    document.querySelectorAll('.box').forEach(box => {
+        box.style.backgroundColor = '';
+    });
+})
+
+
 // Mouse/Coloring Events
 let isMouseDown = false;
 
