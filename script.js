@@ -14,8 +14,7 @@ function makeGrid(gridSize) {
         box.classList.add('box');
         fragment.appendChild(box);
     }
-
-    container.appendChild(fragment);
+    container.replaceChildren(fragment);
 }
 
 
@@ -50,7 +49,7 @@ newBtn.addEventListener('click', () => {
 
 
 eraseBtn.addEventListener('click', () => {
-    document.querySelectorAll('.box').forEach(box => {
+    container.querySelectorAll('.box').forEach(box => {
         box.style.backgroundColor = '';
     });
 })
